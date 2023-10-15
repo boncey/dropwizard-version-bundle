@@ -1,8 +1,10 @@
 package io.dropwizard.bundles.version;
 
-import io.dropwizard.Bundle;
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
+
+import io.dropwizard.core.Configuration;
+import io.dropwizard.core.ConfiguredBundle;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -12,7 +14,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * configurable via a {@code VersionSupplier}.  The provided {@code VersionSupplier} implementation
  * will be called a single time and the value it returns will be memoized for the life of the JVM.
  */
-public class VersionBundle implements Bundle {
+public class VersionBundle<T> implements ConfiguredBundle<T> {
   private static final String DEFAULT_URL = "/version";
 
   private final VersionSupplier supplier;
@@ -49,7 +51,7 @@ public class VersionBundle implements Bundle {
   }
 
   @Override
-  public void run(Environment environment) {
+  public void run(T configuration, Environment environment) {
     VersionServlet servlet = new VersionServlet(supplier, environment.getObjectMapper());
     environment.admin().addServlet("version", servlet).addMapping(url);
   }
