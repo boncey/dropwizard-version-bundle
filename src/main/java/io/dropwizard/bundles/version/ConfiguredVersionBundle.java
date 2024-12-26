@@ -1,9 +1,10 @@
 package io.dropwizard.bundles.version;
 
-import io.dropwizard.Configuration;
-import io.dropwizard.ConfiguredBundle;
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
+
+import io.dropwizard.core.Configuration;
+import io.dropwizard.core.ConfiguredBundle;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -14,7 +15,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * will be called a single time and the value it returns will be memoized for the life of the JVM.
  */
 public abstract class ConfiguredVersionBundle<T extends Configuration>
-        implements ConfiguredBundle<T> {
+        implements ConfiguredBundle<T>
+{
   private static final String DEFAULT_URL = "/version";
 
   private final String url;
