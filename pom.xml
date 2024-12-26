@@ -33,7 +33,7 @@
 
   <properties>
     <reflections.version>0.9.11</reflections.version>
-    <dw.version>4.0.2</dw.version>
+    <dw.version>4.0.11</dw.version>
   </properties>
 
   <build>

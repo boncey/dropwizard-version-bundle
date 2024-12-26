@@ -3,10 +3,6 @@
 A [Dropwizard][dropwizard] bundle that exposes the version of your application as well as its
 dependencies via the admin port.
 
-[![Build Status](https://secure.travis-ci.org/dropwizard-bundles/dropwizard-version-bundle.png?branch=master)]
-(http://travis-ci.org/dropwizard-bundles/dropwizard-version-bundle)
-
-
 ## Getting Started
 
 Just add this maven dependency to get started:
@@ -15,7 +11,7 @@ Just add this maven dependency to get started:
 <dependency>
   <groupId>io.dropwizard-bundles</groupId>
   <artifactId>dropwizard-version-bundle</artifactId>
-  <version>1.0.5</version>
+  <version>1.3.5</version>
 </dependency>
 ```
 
